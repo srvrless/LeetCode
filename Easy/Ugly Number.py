@@ -1,4 +1,4 @@
-n = 6
+n = 8
 def isUgly(n: int):
     Ans = []
     d = 2
@@ -12,4 +12,3 @@ def isUgly(n: int):
         Ans.append(n)
     return Ans
 
-print(isUgly(n))
