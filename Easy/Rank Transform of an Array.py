@@ -9,3 +9,4 @@ class Solution:
         for i in arr:
             res.append(dick[i])
         return res
+
