@@ -1,9 +1,8 @@
-class Solution:
-
-    def distributeCandies(self, candyType: List[int]) -> int:
-        s1 = len(candyType) // 2
-        gosling = len(Counter(candyType))
-        if s1 > gosling:
-            return gosling
-        else:
-            return s1
+def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+    pattern = r"[^\w\s]"
+    xd = re.sub(pattern, "", paragraph.lower().replace(',',', '))
+    xd=xd.split()
+    x=Counter(xd)
+    for i in range(len(banned)):
+        del x[banned[i]]
+    return max(x,key=x.get, default=None)
