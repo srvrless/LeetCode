@@ -10,3 +10,7 @@ index.js
 node_modules
 package-lock.json
 package.json
+venv
+index.html
+main.py
+__pycache__

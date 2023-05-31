@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def checkArithmeticSubarrays(self, nums: List[int], l: List[int], r: List[int]) -> List[bool]:
         d = {}
@@ -15,4 +18,4 @@ class Solution:
                 j+=1
             if j==len(d[ele])-2:
                 ans.append(True)
-        return anss
+        return ans
