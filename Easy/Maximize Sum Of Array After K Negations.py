@@ -1,19 +1,21 @@
+from typing import List, Deque
 from collections import deque
 
-nums =[3,-1,0,2]
-k = 3
-
-nums1=sorted(nums)
-nums=deque(nums)
-count=0
-for i in nums1:
-    if count==k:
-        break
-    if i<=0:
-        nums.popleft()
-        nums.append(abs(i))
-    if i>0:
-        nums.popleft()
-        nums.append(i-(i*2))
-    count+=1
-print( (nums))
+class Solution:
+    def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
+        nums = sorted(nums)
+        nums = deque(nums)
+        count = 0
+        
+        while count < k:
+            if nums[0] < 0:
+                nums[0] = -nums[0]
+                nums = deque(sorted(nums))
+            else:
+                if (k - count) % 2 == 0:
+                    break
+                else:
+                    nums[0] = -nums[0]
+            count += 1
+            
+        return sum(nums)
